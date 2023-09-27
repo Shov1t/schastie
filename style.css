@@ -1,0 +1,76 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+}
+
+#fullscreen-div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  animation: blink 0.5s alternate infinite, fadeIn 1s ease-in;
+  opacity: 0.5; /* Прозрачность мигания */
+}
+
+@keyframes blink {
+  0% {
+    background-color: rgba(255, 0, 0, 0.5); /* Чуть прозрачный красный */
+  }
+  25% {
+    background-color: rgba(0, 255, 0, 0.5); /* Чуть прозрачный зеленый */
+  }
+  50% {
+    background-color: rgba(0, 0, 255, 0.5); /* Чуть прозрачный синий */
+  }
+  75% {
+    background-color: rgba(255, 255, 0, 0.5); /* Чуть прозрачный желтый */
+  }
+  100% {
+    background-color: rgba(128, 0, 128, 0.5); /* Чуть прозрачный пурпурный */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Начать с нулевой прозрачности */
+  }
+  100% {
+    opacity: 1; /* Закончить с полной прозрачностью */
+  }
+}
+
+/* Стили для блесток */
+#sparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 1s linear infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+}
